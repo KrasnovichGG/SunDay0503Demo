@@ -81,11 +81,44 @@
             x:Name="LbF"
             Grid.Column="1"
             Width="78"
-            Height="29"
-            Margin="669,5,0,0"
+            Height="30"
+            Margin="669,4,0,0"
             HorizontalAlignment="Left"
             VerticalAlignment="Top"
             Content="Фильтрация"
             FontSize="16" />
+        <ListView
+            x:Name="LstItems"
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="44,38,44,37"
+            BorderBrush="#00CC76"
+            BorderThickness="5">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel x:Name="SpImage" Orientation="Horizontal">
+                        <Image
+                            Width="100"
+                            Height="100"
+                            Source="{Binding Image}" />
+                        <StackPanel
+                            x:Name="OsnovInfo"
+                            Margin="10"
+                            Orientation="Vertical">
+                            <TextBlock FontSize="15" Text="{Binding ProductType.Title, StringFormat='Тип продута : {0}'}" />
+                            <TextBlock FontSize="15" Text="{Binding Title, StringFormat='Наименование продукта : {0}'}" />
+                            <TextBlock FontSize="15" Text="{Binding ArticleNumber, StringFormat='Артикул : {0}'}" />
+                        </StackPanel>
+                        <StackPanel
+                            x:Name="CostForAgent"
+                            Margin="175,0,0,0"
+                            Orientation="Horizontal">
+                            <TextBlock FontSize="20" Text="{Binding MinCostForAgent, StringFormat='Cтоимость : {0}'}" />
+                        </StackPanel>
+                    </StackPanel>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Window>

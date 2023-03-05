@@ -23,6 +23,7 @@ namespace SunDay0503Demo
         public Main()
         {
             InitializeComponent();
+            LstItems.ItemsSource = App.DBLopushok.Product.ToList();
         }
     }
 }

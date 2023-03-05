@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SunDay0503Demo.DB;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,6 +14,6 @@ namespace SunDay0503Demo
     /// </summary>
     public partial class App : Application
     {
-        
+        public static DemoSunday0503Entities DBLopushok = new DemoSunday0503Entities();
     }
 }

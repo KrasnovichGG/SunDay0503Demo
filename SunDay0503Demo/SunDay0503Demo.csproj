@@ -35,8 +35,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -69,6 +78,63 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DB\Agent.cs">
+      <DependentUpon>ModelLopushok.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\AgentPriorityHistory.cs">
+      <DependentUpon>ModelLopushok.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\AgentType.cs">
+      <DependentUpon>ModelLopushok.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Material.cs">
+      <DependentUpon>ModelLopushok.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\MaterialCountHistory.cs">
+      <DependentUpon>ModelLopushok.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\MaterialType.cs">
+      <DependentUpon>ModelLopushok.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ModelLopushok.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelLopushok.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ModelLopushok.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelLopushok.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ModelLopushok.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelLopushok.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Product.cs">
+      <DependentUpon>ModelLopushok.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ProductCostHistory.cs">
+      <DependentUpon>ModelLopushok.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ProductMaterial.cs">
+      <DependentUpon>ModelLopushok.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ProductSale.cs">
+      <DependentUpon>ModelLopushok.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\ProductType.cs">
+      <DependentUpon>ModelLopushok.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Shop.cs">
+      <DependentUpon>ModelLopushok.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\Supplier.cs">
+      <DependentUpon>ModelLopushok.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DB\sysdiagrams.cs">
+      <DependentUpon>ModelLopushok.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -86,6 +152,14 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EntityDeploy Include="DB\ModelLopushok.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelLopushok.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DB\ModelLopushok.edmx.diagram">
+      <DependentUpon>ModelLopushok.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -94,9 +168,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DB\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="products\paper_0.jpeg" />
     <Resource Include="products\paper_1.jpeg" />
@@ -131,6 +203,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="products\Лопушок.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DB\ModelLopushok.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelLopushok.Context.cs</LastGenOutput>
+      <DependentUpon>ModelLopushok.edmx</DependentUpon>
+    </Content>
+    <Content Include="DB\ModelLopushok.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelLopushok.edmx</DependentUpon>
+      <LastGenOutput>ModelLopushok.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
